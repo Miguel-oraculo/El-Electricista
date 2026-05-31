@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="
+width=device-width,
+initial-scale=1,
+maximum-scale=1,
+user-scalable=no
+">
+
+<title>⚡ El Electricista</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+<h1>⚡ El Electricista</h1>
+
+<div class="toolbar">
+
+<select id="tipoCable">
+
+<option value="red">
+🔴 Fase
+</option>
+
+<option value="blue">
+🔵 Neutro
+</option>
+
+<option value="white">
+⚪ Retorno
+</option>
+
+<option value="green">
+🟢 Tierra
+</option>
+
+<option value="orange">
+🟠 Viajero
+</option>
+
+</select>
+
+<button onclick="colorCable='green'">
+🟢 Tierra
+</button>
+
+<button onclick="crearComponente('lampara')">
+💡 Lámpara
+</button>
+
+<button onclick="crearComponente('simple')">
+🎚 Interruptor
+</button>
+
+<button onclick="crearComponente('combinada')">
+🔀 Combinada
+</button>
+
+<button onclick="crearComponente('cuatrovias')">
+🔀 4 Vías
+</button>
+
+<button onclick="crearComponente('pulsador')">
+🔴 Pulsador
+</button>
+
+<button onclick="crearComponente('palier3')">
+⏱ Palier 3H
+</button>
+
+<button onclick="togglePower()">
+⚡ Térmica
+</button>
+
+<button onclick="limpiarTablero()">
+🗑 Limpiar
+</button>
+
+</div>
+
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script src="globals.js"></script>
+<script src="componentes.js"></script>
+<script src="motor.js"></script>
+<script src="render.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
