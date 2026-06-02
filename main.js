@@ -358,7 +358,9 @@ function manejarMouseDown(e){
             return;
         }
     }
-    if(!clicEnComponente){
+   if(!clicEnComponente){
+
+    console.log("PAN ON");
 
     panning = true;
 
@@ -375,6 +377,8 @@ function manejarMouseDown(e){
 function manejarMouseMove(e){
 
   if(panning){
+
+    console.log("MOVIENDO");
 
     offsetCanvasX =
     offsetCanvasX +
