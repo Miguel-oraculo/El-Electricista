@@ -374,13 +374,15 @@ function manejarMouseDown(e){
 
 function manejarMouseMove(e){
 
-    if(panning){
+  if(panning){
 
-    offsetCanvasX +=
-    e.clientX - panStartX;
+    offsetCanvasX =
+    offsetCanvasX +
+    (e.clientX - panStartX);
 
-    offsetCanvasY +=
-    e.clientY - panStartY;
+    offsetCanvasY =
+    offsetCanvasY +
+    (e.clientY - panStartY);
 
     panStartX =
     e.clientX;
