@@ -28,3 +28,8 @@ let lastTouchDistance = 0;
 let lastTouchCenterX = 0;
 
 let lastTouchCenterY = 0;
+
+let panning = false;
+
+let panStartX = 0;
+let panStartY = 0;

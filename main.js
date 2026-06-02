@@ -5,6 +5,17 @@ document.getElementById("canvas");
 const ctx =
 canvas.getContext("2d");
 
+/************************
+PAN DEL TABLERO
+************************/
+
+let panning = false;
+
+let panStartX = 0;
+
+let panStartY = 0;
+
+
 /* =========================
    CANVAS
 ========================= */
@@ -49,6 +60,8 @@ canvas.addEventListener(
     ()=>{
 
         dragging = null;
+
+        panning = false;
     }
 );
 
@@ -176,6 +189,8 @@ canvas.addEventListener(
 
         dragging = null;
 
+        panning = false;
+
         lastTouchDistance = 0;
     }
 );
@@ -287,6 +302,8 @@ function manejarMouseDown(e){
         }
     }
 
+    let clicEnComponente = false;
+
     for(let comp of componentes){
 
         if(
@@ -298,6 +315,7 @@ function manejarMouseDown(e){
             my <= comp.y + comp.h
 
         ){
+            clicEnComponente = true;
 
             dragging = comp;
 
@@ -340,6 +358,14 @@ function manejarMouseDown(e){
             return;
         }
     }
+    if(!clicEnComponente){
+
+    panning = true;
+
+    panStartX = e.clientX;
+
+    panStartY = e.clientY;
+}
 }
 
 /* =========================
@@ -347,6 +373,25 @@ function manejarMouseDown(e){
 ========================= */
 
 function manejarMouseMove(e){
+
+    if(panning){
+
+    offsetCanvasX +=
+    e.clientX - panStartX;
+
+    offsetCanvasY +=
+    e.clientY - panStartY;
+
+    panStartX =
+    e.clientX;
+
+    panStartY =
+    e.clientY;
+
+    render();
+
+    return;
+}
 
     if(!dragging)
     return;
