@@ -5,15 +5,7 @@ document.getElementById("canvas");
 const ctx =
 canvas.getContext("2d");
 
-/************************
-PAN DEL TABLERO
-************************/
 
-let panning = false;
-
-let panStartX = 0;
-
-let panStartY = 0;
 
 
 /* =========================
